@@ -1,3 +1,4 @@
+#selection_sort@0.0.1
 #include <iostream>
 #include <sstream>
 
@@ -21,26 +22,34 @@ int main ()
  { 
    int * mas = new int; 
    int i,j,n;
+   int min;
    string str;
    getline(cin,str);
    istringstream  stream (str);
     
-       if (stream >> n ){   
-         if ( read (n , mas) ) {
-            for (i = 0; i < n; i++) {
-                  for (j = i+1; j < n; j++) {
-                 
-                   if (mas[i] > mas[j])
-                       swap(mas[i],mas[j]);
-                  }}                          
-            
-             for (i = 0; i < n; i++)
-                 cout << mas[i]<<' ';
+       if (stream >> n){
+         if (read(n,mas)){
+          int min_i;
+          for (int i = 0;i <n;i++){
+            min = mas[i];
+            min_i = i;
+             for (int j = i; j < n; j++){
+               if (mas[j]< min) {
+                 min = mas[j];
+                 min_i = j;
+               }
+               
+             }
+             swap(mas[i],mas[min_i]);
+          }
+              for (int i = 0;i <n;i++) 
+                 cout << mas[i] << ' ';
+                
+           
          }
-       
-                else {cout << "An error has occured while reading input data." ; }
-                 
-         }
+         else cout << "An error has occured while reading input data.";
+           
+}
         
  return 0;
  }  
