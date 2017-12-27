@@ -1,5 +1,5 @@
 
-#include <iostream>
+##include <iostream>
 #include <sstream>
 
 using namespace std;
@@ -14,8 +14,8 @@ bool read (int & n, int * mas)
       for (int i=0;i<n;i++){
        
        if (!(stream >> mas[i])) {
-         F = false; 
-         break;
+          F = false; 
+          break;
          
        }
       }
@@ -35,24 +35,24 @@ int main ()
           if (read(n,mas)){
             int min_i;
             for (int i = 0;i <n;i++){
-              min = mas[i];
-              min_i = i;
-              for (int j = i; j < n; j++){
-                if (mas[j]< min) {
-                  min = mas[j];
-                  min_i = j;
-                }
+                min = mas[i];
+                min_i = i;
+                for (int j = i; j < n; j++){
+                    if (mas[j]< min) {
+                        min = mas[j];
+                        min_i = j;
+                     }
                
-              }
-              swap(mas[i],mas[min_i]);
+                }
+                swap(mas[i],mas[min_i]);
             }
             for (int i = 0;i <n;i++) 
-              cout << mas[i] << ' ';
+                cout << mas[i] << ' ';
                 
           }
           else cout << "An error has occured while reading input data.";
            
-  }
+        }
   delete[] mas;      
   return 0;
  }  
